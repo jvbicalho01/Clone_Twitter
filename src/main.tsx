@@ -1,57 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Bell, BookmarkSimple, DotsThreeCircle, Envelope, FileText, Hash, House, Sparkle, User } from "@phosphor-icons/react";
+import { Sparkle } from "@phosphor-icons/react";
 
 import "./global.css"
 
-import twitterLogo from "./assets/logo-twitter.svg"
+import { Sidebar } from './components/Sidebar';
+
 import { Tweet } from './components/Tweet';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <div className='layout'>
-      <aside className='sidebar'>
-        <img className='logo' src={twitterLogo} alt="Logo" />
-
-        <nav className='main-navigation'>
-          <a className='active' href="">
-            <House weight='fill' />
-            Home
-          </a>
-          <a href="">
-            <Hash />
-            Explore
-          </a>
-          <a href="">
-            <Bell />
-            Notifications
-          </a>
-          <a href="">
-            <Envelope />
-            Messages
-          </a>
-          <a href="">
-            <BookmarkSimple />
-            Bookmarks
-          </a>
-          <a href="">
-            <FileText />
-            Lists
-          </a>
-          <a href="">
-            <User />
-            Profile
-          </a>
-          <a href="">
-            <DotsThreeCircle />
-            More
-          </a>
-        </nav>
-
-        <button className='new-tweet' type='button'>
-          Tweet
-        </button>
-      </aside>
+      <Sidebar />
 
       <div className='content'>
         <main className='timeline'>
@@ -63,18 +23,16 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <form className='new-tweet-form'>
             <label htmlFor="tweet">
               <img src="https://github.com/jvbicalho01.png" alt="João Vítor Bicalho" />
-              <textarea id="tweet" placeholder="What's happening?"/>
+              <textarea id="tweet" placeholder="What's happening?" />
             </label>
 
             <button type='submit'>Tweet</button>
           </form>
 
-          <div className='saparator'/>
+          <div className='saparator' />
 
-          <Tweet/>
-          <Tweet/>
-          <Tweet/>
-          <Tweet/>
+          <Tweet />
+          <Tweet />
         </main>
       </div>
 
