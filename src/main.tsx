@@ -5,8 +5,8 @@ import { Sparkle } from "@phosphor-icons/react";
 import "./global.css"
 
 import { Sidebar } from './components/Sidebar';
-
 import { Tweet } from './components/Tweet';
+import { Header } from './components/Header';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -15,10 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
       <div className='content'>
         <main className='timeline'>
-          <div className='timeline-header'>
-            Home
-            <Sparkle />
-          </div>
+          <Header title="Home"/>
 
           <form className='new-tweet-form'>
             <label htmlFor="tweet">
