@@ -1,41 +1,42 @@
-.new-tweet-form {
+.answer-tweet-form {
   padding: 1.5rem 1.25rem;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
+  border-bottom: 1px solid #ebebeb;
 }
 
-.new-tweet-form label {
+.answer-tweet-form label {
   display: flex;
   flex: 1;
   align-items: center;
   gap: 0.75rem;
 }
 
-.new-tweet-form label img {
+.answer-tweet-form label img {
   width: 3rem;
   height: 3rem;
   border-radius: 9999px;
 }
 
-.new-tweet-form label textarea {
+.answer-tweet-form label textarea {
   flex: 1;
   border: 0;
   font-size: 1.25rem;
   font-weight: 500;
-  margin-top: 0.75rem;
+  margin-top: 1.25rem;
   resize: none;
 }
 
-.new-tweet-form label textarea:focus {
+.answer-tweet-form label textarea:focus {
   outline: none;
 }
 
-.new-tweet-form label textarea::placeholder {
+.answer-tweet-form label textarea::placeholder {
   color: #5b7083;
 }
 
-.new-tweet-form button {
+.answer-tweet-form button {
   margin-left: auto;
   background: var(--twitter-blue);
   border-radius: 9999px;
@@ -47,6 +48,6 @@
   transition: 0.3s;
 }
 
-.new-tweet-form button:hover {
+.answer-tweet-form button:hover {
   filter: brightness(0.9);
 }
