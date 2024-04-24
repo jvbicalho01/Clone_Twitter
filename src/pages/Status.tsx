@@ -1,16 +1,26 @@
+import { FormEvent, useState } from "react"
 import { Header } from "../components/Header"
 import { Separator } from "../components/Separator"
 import { Tweet } from "../components/Tweet"
 
 import "./Status.css"
 
-const answers = [
-  'Meu primeiro tweet',
-  'Teste',
-  'Hello World'
-]
-
 export function Status() {
+
+  const [newAnswers, setNewAnswers] = useState('')
+
+  const [answers, setAnswers] = useState([
+    'Concordo',
+    'Faz sentido',
+    'Parabéns pelo progresso'
+  ])
+
+  const createNewAnswers = (event: FormEvent) => {
+    event.preventDefault()
+
+    setAnswers([newAnswers, ...answers])
+    setNewAnswers('')
+  }
 
   return (
     <main className='timeline'>
@@ -20,10 +30,17 @@ export function Status() {
 
       <Separator />
 
-      <form className='answer-tweet-form'>
+      <form onSubmit={createNewAnswers} className='answer-tweet-form'>
         <label htmlFor="tweet">
           <img src="https://github.com/jvbicalho01.png" alt="João Vítor Bicalho" />
-          <textarea id="tweet" placeholder="Tweet your answer" />
+          <textarea 
+          id="tweet" 
+          placeholder="Tweet your answer" 
+          value={newAnswers}
+          onChange={(event) => {
+            setNewAnswers(event.target.value)
+          }}
+          />
         </label>
 
         <button type='submit'>Answer</button>
